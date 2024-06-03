@@ -139,7 +139,7 @@ function filter_numbers(numbers) {
         return `Name: ${this.name}, Age: ${this.age}`;
     }
   }
-  const person = new Person('Alice', 25);
+  const person = new Person('Ozzy', 25);
   console.log(person.describe()); 
   
   
@@ -165,7 +165,7 @@ function filter_numbers(numbers) {
         return `${this.name} is studying.`;
     }
   }
-  const student = new Student('Bob', 20, 'A');
+  const student = new Student('Oggy', 21, 'A');
   console.log(student.describe()); 
   console.log(student.study()); 
   
@@ -176,7 +176,7 @@ function filter_numbers(numbers) {
         setTimeout(() => {
             if (Math.random() > 0.5) {
                 const users = [
-                    { id: 1, name: 'Alice', age: 25 },
+                    { id: 1, name: '', age: 25 },
                     { id: 2, name: 'Bob', age: 30 },
                     { id: 3, name: 'Charlie', age: 35 }
                 ];
@@ -200,9 +200,9 @@ function filter_numbers(numbers) {
             setTimeout(() => {
                 if (Math.random() > 0.5) {
                     const users = [
-                        { id: 1, name: 'Alice', age: 25 },
-                        { id: 2, name: 'Bob', age: 30 },
-                        { id: 3, name: 'Charlie', age: 35 }
+                        { id: 1, name: 'Ozzy', age: 75 },
+                        { id: 2, name: 'Tony', age: 76 },
+                        { id: 3, name: 'Bill', age: 76 }
                     ];
                     resolve(users);
                 } else {
@@ -222,13 +222,13 @@ function filter_numbers(numbers) {
   // Given an array of users, where each user has a name and an array of hobbies, create a function that returns an array of all unique hobbies using reduce.
   
   function getUnique_hobbies(person) {
-    return person.reduce((allHobbies, person) => {
-        person.hobbies.forEach(hobby => {
-            if (!allHobbies.includes(hobby)) {
-                allHobbies.push(hobby);
+    return person.reduce((allHobb, person) => {
+        person.hobbies.forEach(hob => {
+            if (!allHobb.includes(hob)) {
+                allHobb.push(hob);
             }
         });
-        return allHobbies;
+        return allHobb;
     }, []);
   }
   const persons = [
@@ -236,4 +236,4 @@ function filter_numbers(numbers) {
     { name: 'Mick', hobbies: ['singing', 'hiking'] },
     { name: 'Joet=y', hobbies: ['playing', 'dancing'] }
   ];
-  console.log(getUniqueHobbies(persons)); 
+  console.log(getUnique_hobbies(persons)); 
