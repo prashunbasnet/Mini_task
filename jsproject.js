@@ -176,9 +176,9 @@ function filter_numbers(numbers) {
         setTimeout(() => {
             if (Math.random() > 0.5) {
                 const users = [
-                    { id: 1, name: '', age: 25 },
-                    { id: 2, name: 'Bob', age: 30 },
-                    { id: 3, name: 'Charlie', age: 35 }
+                    { id: 1, name: 'Luffy', age: 21 },
+                    { id: 2, name: 'Zoro', age: 25 },
+                    { id: 3, name: 'Sanji', age: 26 }
                 ];
                 resolve(users);
             } else {
