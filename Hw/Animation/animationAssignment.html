@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        button{
+            height: 60px;
+            width: 60px;
+            border-radius: 4px;
+            background-color: pink;
+            color: white;
+            font-weight: bold;
+            
+        }
+
+        button:hover{
+            background-color: red;
+            height: 62px;
+            width: 92px;
+            transition:height 1s, width 0.5s, background-color 3s; 
+            box-shadow: 10px 10px;
+        }
+
+        #circle{
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            animation: pulsate 2s infinite;
+        }
+        @keyframes pulsate {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+            from{
+                background-color: red;
+            }
+            to{
+                background-color: pink;
+            }
+            
+        }
+        .ball{
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            background-color: greenyellow;
+            animation: bounce 2s infinite ease-in-out;
+            position: absolute;
+            top: 0;
+        }
+
+        #ballContainer{
+            height: 300px;
+            width: 60px;
+            background-color: rebeccapurple;
+            border: 2px solid #000;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        @keyframes bounce {
+            0%,  100{
+                top: 0;
+            }
+            50% {
+                top: 120%;
+                transform: translateY(-100%);
+            }
+        }
+
+        img{
+            height: 300px;
+            width: 300px;
+        }
+
+        .marquee-container {
+            width: 100%;
+            background-color: grey;
+            color: #fff;
+            padding: 10px 0;
+            margin-top:200px;
+        }
+
+        .marquee {
+         
+            animation: slide 5s linear infinite;
+        }
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .card-container {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            perspective: 1000px; /* Add perspective to the card */
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            border-radius: 10px;
+        }
+
+        .card-front {
+            background-color: rgb(182, 95, 2);
+            color: white;
+        }
+
+        .card-back {
+            background-color: #19c519;
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .menu-button {
+            margin-left: 500px;
+        }
+
+        .menu-button:hover {
+            background-color: #2980b9;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #c9c5c5;
+            color: white;
+            overflow-y: auto;
+            transition: transform 0.5s ease;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu.active {
+            transform: translateX(250px);
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #444;
+        }
+
+        .menu ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: block;
+            font-family: sans-serif;
+            font-size: larger;
+        }
+
+        .menu ul li a:hover {
+            background-color: #575757;
+        }
+
+        .spinner {
+            margin-left: 400px;
+            width: 50px;
+            height: 50px;
+            border: 8px solid #f0f0f0;
+            border-top: 8px solid #db3434;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="spinner" ></div>
+    <section class ="main">
+        <button class ="btn">Button</button>
+        <div id = "circle"></div>
+        <div id = "ballContainer">
+            <div class = "ball">
+            </div>
+        </div>
+    </section>
+    <!-- <section class ="main2">
+        <div class="gallery">
+            <img src="https://media.istockphoto.com/id/2107006869/photo/watercolor-paint-splash-orange.webp?b=1&s=170667a&w=0&k=20&c=z1w3RmnNj-YmJkL4PW59StOtc7Rb3IthIfBohVxBF5w=" alt="Image 1">
+            <img src="https://media.istockphoto.com/id/1401109426/photo/flowing-water-liquid-freshness-horizontal-movement-bright.webp?b=1&s=170667a&w=0&k=20&c=f9Ak9bj0gYxxx6I6GEAE1uWx23MxHPTikn2LfhaJ1Ho=" alt="Image 2">
+            <img src="https://media.istockphoto.com/id/1368264124/photo/extreme-close-up-of-thrashing-emerald-ocean-waves.webp?b=1&s=170667a&w=0&k=20&c=qha_PaU54cu9QCu1UTlORP4-sW0MqLGERkdFKmC06lI=" alt="Image 3">
+
+        </div>
+    </section><br> -->
+    <div class="marquee-container">
+        <div class="marquee">
+            Hello I am under the water please help me its very cold huhuhu
+        </div>
+    </div><br>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-face card-front">
+                Basketball
+            </div>
+            <div class="card-face card-back">
+                Football
+            </div>
+        </div>
+    </div><br>
+    <button class="menu-button">Menu</button>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+   
+
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', () => {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
